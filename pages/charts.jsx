@@ -1,17 +1,51 @@
 import { useEffect } from "react";
 
 const Charts = () => {
-  const span = <span className={`bg-slate-600 w-10 h-32`}>10</span>;
+  const c = [
+    {
+      32: "",
+    },
+    {
+      20: "",
+    },
+    {
+      40: "",
+    },
+    {
+      10: "",
+    },
+    {
+      52: "",
+    },
+  ];
+
+  console.log("A: ", c);
+  for (let i = 1; i < c.length; i++) {
+    for (let j = 0; j <= i; j++) {
+      console.log(+Object.keys(c[j]));
+      if (+Object.keys(c[i]) < +Object.keys(c[j])) {
+        let temp = c[i];
+        c[i] = c[j];
+        c[j] = temp;
+      }
+    }
+  }
+  console.log("a: ", c);
 
   useEffect(() => {
     console.log("useEffect");
   }, []);
 
   return (
-    <div className="flex gap-2 items-end">
-      <span className={`bg-slate-600 w-10 h-20`}>20</span>
-      <span className={`bg-slate-600 w-10 h-52`}>16</span>
-      {span}
+    <div key={12} className="flex gap-2 items-end bg-slate-300 p-10 rounded-md">
+      {c.map((e) => (
+        <span
+          key={Object.keys(e)}
+          className={`bg-slate-600 w-10 h-${Object.keys(e)}`}
+        >
+          {Object.keys(e)}
+        </span>
+      ))}
     </div>
   );
 };

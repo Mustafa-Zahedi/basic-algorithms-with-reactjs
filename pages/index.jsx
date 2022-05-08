@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to learning algorithms wity react.js
+          Welcome to learning algorithms with react.js
         </h1>
 
         <p className={styles.description}>please select an algorithm.</p>
