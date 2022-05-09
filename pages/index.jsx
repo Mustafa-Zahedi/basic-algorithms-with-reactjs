@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Charts from "./charts";
+import Insertion from "./insertion";
 
 export default function Home() {
   return (
@@ -12,12 +12,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to learning algorithms with react.js
-        </h1>
-
-        <p className={styles.description}>please select an algorithm.</p>
-        <Charts />
+        <h1 className={styles.title}>Algorithms with react.js</h1>
+        <div className="my-5"></div>
+        <Insertion />
       </main>
 
       <footer className={styles.footer}>
