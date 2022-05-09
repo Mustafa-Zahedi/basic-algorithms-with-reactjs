@@ -3,16 +3,16 @@ import { useState, useEffect } from "react";
 const Insertion = () => {
   const [c] = useState([
     {
-      96: "bg-slate-600 w-10 h-96",
+      40: "bg-slate-600 w-10 h-40",
     },
     {
-      80: "bg-slate-600 w-10 h-80",
+      20: "bg-slate-600 w-10 h-20",
     },
     {
       52: "bg-slate-600 w-10 h-52",
     },
     {
-      40: "bg-slate-600 w-10 h-40",
+      80: "bg-slate-600 w-10 h-80",
     },
     {
       32: "bg-slate-600 w-10 h-32",
@@ -63,17 +63,14 @@ const Insertion = () => {
   return (
     <section>
       <h3 className="font-bold text-xl">Insertion Sort</h3>
-      <span className="font-medium">
+      <p className="indent-8 font-medium my-3">
         Insertion sort is the most popular sort in programming and it's a simple
         sorting algorithm that works similar to the way you sort playing cards
         in your hands. The array is virtually split into a sorted and an
         unsorted part. Values from the unsorted part are picked and placed at
         the correct position in the sorted part.
-      </span>
-      <div
-        key={12}
-        className="flex gap-2 items-end bg-slate-300 p-10 rounded-md"
-      >
+      </p>
+      <div className="flex gap-2 items-end bg-slate-300 p-10 rounded-md">
         {a.map((e) => (
           <span key={Object.keys(e)} className={Object.values(e)}>
             {Object.keys(e)}
