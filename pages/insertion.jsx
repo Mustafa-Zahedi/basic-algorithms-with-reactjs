@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Insertion = () => {
   const [c] = useState([
     {
-      40: "bg-slate-600 w-10 h-40",
+      52: "bg-slate-600 w-10 h-52",
     },
     {
       20: "bg-slate-600 w-10 h-20",
     },
     {
-      52: "bg-slate-600 w-10 h-52",
+      40: "bg-slate-600 w-10 h-40",
     },
     {
       80: "bg-slate-600 w-10 h-80",

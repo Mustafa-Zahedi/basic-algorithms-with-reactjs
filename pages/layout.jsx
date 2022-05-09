@@ -4,7 +4,6 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className="text-3xl">Sorting algorithms with react.js</h1>
         <div className="my-3">{children}</div>
       </main>
       <footer className={styles.footer}>
