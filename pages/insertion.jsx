@@ -30,6 +30,9 @@ const Insertion = () => {
       44: "bg-slate-600 w-10 h-44",
     },
     {
+      28: "bg-slate-600 w-10 h-28",
+    },
+    {
       72: "bg-slate-600 w-10 h-72",
     },
     {
@@ -42,17 +45,18 @@ const Insertion = () => {
   for (let i = 1; i < c.length; i++) {
     setTimeout(() => {
       let cc = [...c];
-      for (let j = 0; j <= i; j++) {
+      for (let j = i - 1; j >= 0; j--) {
         setTimeout(() => {
           if (+Object.keys(c[i]) < +Object.keys(c[j])) {
+            c[j][Object.keys(c[j])] = `bg-red-600 w-10 h-${Object.keys(c[j])}`;
             let temp = c[i];
             c[i] = c[j];
             c[j] = temp;
-            temp[Object.keys(temp)] = `bg-red-600 w-10 h-${Object.keys(temp)}`;
+
             cc = [...c];
             setA(cc);
-            temp[Object.keys(temp)] = `bg-slate-600 w-10 h-${Object.keys(
-              temp
+            c[j][Object.keys(c[j])] = `bg-slate-600 w-10 h-${Object.keys(
+              c[j]
             )}`;
           }
         }, (j * 3000) / i);
@@ -72,9 +76,7 @@ const Insertion = () => {
       </p>
       <div className="flex gap-2 items-end bg-slate-300 p-10 rounded-md">
         {a.map((e) => (
-          <span key={Object.keys(e)} className={Object.values(e)}>
-            {Object.keys(e)}
-          </span>
+          <span key={Object.keys(e)} className={Object.values(e)}></span>
         ))}
       </div>
     </section>
