@@ -40,8 +40,12 @@ const Insertion = () => {
     },
   ]);
 
+  // TODO: this state is used to copy the main array and show on UI
   const [a, setA] = useState([c]);
+
+  // * The time varible is used to get time from user and used as speed to show the sort action
   let time = 2000;
+
   for (let i = 1; i < c.length; i++) {
     setTimeout(() => {
       for (let j = i - 1; j >= 0; j--) {
