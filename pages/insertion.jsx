@@ -40,28 +40,23 @@ const Insertion = () => {
     },
   ]);
 
-  const [a, setA] = useState(c);
-
+  const [a, setA] = useState([c]);
+  let time = 2000;
   for (let i = 1; i < c.length; i++) {
     setTimeout(() => {
-      let cc = [...c];
       for (let j = i - 1; j >= 0; j--) {
         setTimeout(() => {
-          if (+Object.keys(c[i]) < +Object.keys(c[j])) {
-            c[j][Object.keys(c[j])] = `bg-red-600 w-10 h-${Object.keys(c[j])}`;
-            let temp = c[i];
-            c[i] = c[j];
+          if (+Object.keys(c[j + 1]) < +Object.keys(c[j])) {
+            let temp = c[j + 1];
+            c[j + 1] = c[j];
             c[j] = temp;
-
-            cc = [...c];
-            setA(cc);
-            c[j][Object.keys(c[j])] = `bg-slate-600 w-10 h-${Object.keys(
-              c[j]
-            )}`;
+            c[j][Object.keys(c[j])] = `bg-lime-600 w-10 h-${Object.keys(c[j])}`;
           }
-        }, (j * 3000) / i);
+          setA([...c]);
+          c[j][Object.keys(c[j])] = `bg-slate-600 w-10 h-${Object.keys(c[j])}`;
+        }, j * 200);
       }
-    }, i * 3000);
+    }, i * 100);
   }
 
   return (

@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div>
+    <aside>
       <article className="grid grid-cols-12">
         <div className="col-span-2 bg-slate-50 p-3 grid items-center">
           <div className="flex justify-center">
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
           </footer>
         </div>
       </article>
-    </div>
+    </aside>
   );
 };
 
