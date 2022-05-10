@@ -50,13 +50,17 @@ const Insertion = () => {
             let temp = c[j + 1];
             c[j + 1] = c[j];
             c[j] = temp;
-            c[j][Object.keys(c[j])] = `bg-lime-600 w-10 h-${Object.keys(c[j])}`;
+            temp[Object.keys(temp)] = `bg-lime-600 border w-10 h-${Object.keys(
+              temp
+            )}`;
+            setA([...c]);
+            temp[Object.keys(temp)] = `bg-slate-600 w-10 h-${Object.keys(
+              temp
+            )}`;
           }
-          setA([...c]);
-          c[j][Object.keys(c[j])] = `bg-slate-600 w-10 h-${Object.keys(c[j])}`;
-        }, j * 200);
+        }, (j * time) / i);
       }
-    }, i * 100);
+    }, i * time);
   }
 
   return (
